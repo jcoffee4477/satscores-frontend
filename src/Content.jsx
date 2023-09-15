@@ -18,6 +18,8 @@ export function Content() {
             <h1>{school[9]}</h1>
             <p>Avg math Score: {school[12]}</p>
             <p>Avg writing score: {school[13]}</p>
+            <p>TEST {school[11]}</p>
+            <p>TEST {school[8]}</p>
           </div>
         );
       }
@@ -37,7 +39,14 @@ export function Content() {
   } else {
     return (
       <div>
-        <h1>Welcome to React!</h1>
+        {schools.map((school) => (
+         <div key={school[8]}>
+          <span>
+            <h5><span>{school[12]}</span></h5>
+            <h5>{school[13]}</h5>
+          </span>  
+         </div>
+       ))}
         <input
           type="text"
           value={searchFilter}
